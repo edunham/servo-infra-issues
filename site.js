@@ -289,9 +289,10 @@ var IssueList = React.createClass({
             var issues = this.getIssuesWithSelectedLabels(
                 this.props.issues, this.props.selectedLabels);
 
-            if (this.state.limited && issues.length > 5) {
+            var maxissues = 20
+            if (this.state.limited && issues.length > maxissues) {
                 issues = issues.map(issueItem)
-                                          .slice(0, 5)
+                                          .slice(0, maxissues)
                                           .concat(
                                               d.div(
                                                   {
