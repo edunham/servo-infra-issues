@@ -1,0 +1,22 @@
+{
+  "name": "servo-infra-issues",
+  "version": "0.0.1",
+  "description": "Website for Servo Infra Issues",
+  "main": "site.js",
+  "scripts": {
+    "test": "node node_modules/jshint/bin/jshint site.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:edunham/servo-infra-issues.git"
+  },
+  "author": "",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/edunham/servo-infra-issues/issues"
+  },
+  "homepage": "https://github.com/edunham/servo-infra-issues#readme",
+  "devDependencies": {
+    "jshint": "^2.8.0"
+  }
+}
