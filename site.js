@@ -166,27 +166,6 @@ var label = function (data) {
     );
 };
 
-var FeelingAdventurous = React.createClass({
-    gotoRandomIssue: function () {
-        var issues = this.props.issues;
-
-        var randomIndex = Math.floor(Math.random() * (issues.length + 1));
-
-        window.location.href = issues[randomIndex].html_url;
-    },
-
-    render: function () {
-        return d.button(
-            {className: "button", onClick: this.gotoRandomIssue},
-            "I'm Feeling Adventurous..."
-        );
-    }
-});
-
-var feelingAdventurous = function (issues) {
-    return React.createElement(FeelingAdventurous, {issues: issues});
-};
-
 var Labels = React.createClass({
     render: function() {
         return d.div(
@@ -387,16 +366,15 @@ var App = React.createClass({
     render: function () {
         return d.div(
             {},
-            this.state.openIssuesLoading ? [] : feelingAdventurous(this.state.openIssues),
 
             this.state.openIssuesLoading ? [] : d.div({className: "language-picker"},
                 d.h5({}, "and I want to work with: "),
                 wantToWorkWith(this.state.languageFilters, this.selectFilter)),
 
-            d.h2({}, "Open Issues"),
+            d.h2({}, "Some Infra Issues"),
             issueList(this.state.openIssues, this.state.openIssuesLoading, this.state.languageFilters),
 
-            d.h2({}, "Potentially Open Issues"),
+            d.h2({}, "More Infra Issues"),
             issueList(this.state.potentiallyOpenIssues, this.state.potentiallyOpenIssuesLoading, this.state.languageFilters)
         );
     }
