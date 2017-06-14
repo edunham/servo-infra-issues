@@ -366,11 +366,6 @@ var App = React.createClass({
     render: function () {
         return d.div(
             {},
-
-            this.state.openIssuesLoading ? [] : d.div({className: "language-picker"},
-                d.h5({}, "and I want to work with: "),
-                wantToWorkWith(this.state.languageFilters, this.selectFilter)),
-
             d.h2({}, "Some Infra Issues"),
             issueList(this.state.openIssues, this.state.openIssuesLoading, this.state.languageFilters),
 
